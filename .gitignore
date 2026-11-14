@@ -1,0 +1,31 @@
+# Secrets & Credentials (CRITICAL)
+.env
+.env.*
+*.pem
+*.key
+
+# Local Fine-Tuned Models & Checkpoints
+cyber-bge-small/
+cyber-extractor-qlora/
+checkpoints/
+training_outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Python Caches & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+desktop.ini

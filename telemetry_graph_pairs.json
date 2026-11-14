@@ -1,0 +1,17 @@
+[
+  {
+    "instruction": "Extract causal graph triples from the following telemetry logs.",
+    "input": "Nov 14 03:12:44 ip-10-0-2-15 sshd[28411]: Failed password for invalid user admin from 192.168.1.105 port 54822 ssh2",
+    "output": "[{\"head\": \"IP_192.168.1.105\", \"relation\": \"failed_authentication_to\", \"tail\": \"Host_ip-10-0-2-15\"}, {\"head\": \"IP_192.168.1.105\", \"relation\": \"targeted_user\", \"tail\": \"User_admin\"}, {\"head\": \"Process_sshd\", \"relation\": \"listened_on_port\", \"tail\": \"Port_54822\"}]"
+  },
+  {
+    "instruction": "Extract causal graph triples from the following telemetry logs.",
+    "input": "2026/11/14 03:15:02 [error] 14210#0: *894 open() \"/var/www/html/../../../../etc/passwd\" failed (2: No such file or directory), client: 203.0.113.88, server: corporate-api.internal, request: \"GET /../../../../etc/passwd HTTP/1.1\", host: \"corporate-api.internal\"",
+    "output": "[{\"head\": \"IP_203.0.113.88\", \"relation\": \"executed_path_traversal_against\", \"tail\": \"Endpoint_corporate-api.internal\"}, {\"head\": \"IP_203.0.113.88\", \"relation\": \"attempted_file_read\", \"tail\": \"File_/etc/passwd\"}, {\"head\": \"Endpoint_corporate-api.internal\", \"relation\": \"returned_error_status\", \"tail\": \"Status_404_NotFound\"}]"
+  },
+  {
+    "instruction": "Extract causal graph triples from the following telemetry logs.",
+    "input": "{\"eventTime\": \"2026-11-14T03:18:22Z\", \"eventName\": \"AttachUserPolicy\", \"userIdentity\": {\"type\": \"IAMUser\", \"userName\": \"service-deployer\", \"arn\": \"arn:aws:iam::123456789012:user/service-deployer\"}, \"requestParameters\": {\"userName\": \"temp-contractor\", \"policyArn\": \"arn:aws:iam::aws:policy/AdministratorAccess\"}}",
+    "output": "[{\"head\": \"IAMUser_service-deployer\", \"relation\": \"attached_policy_to\", \"tail\": \"IAMUser_temp-contractor\"}, {\"head\": \"IAMUser_temp-contractor\", \"relation\": \"granted_privilege\", \"tail\": \"Policy_AdministratorAccess\"}]"
+  }
+]

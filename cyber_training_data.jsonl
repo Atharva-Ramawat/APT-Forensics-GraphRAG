@@ -1,0 +1,5 @@
+{"anchor": "CVE-2021-44228", "positive": "A critical remote code execution vulnerability in Apache Log4j 2 JNDI lookup functionality allowing unauthenticated command injection via crafted strings."}
+{"anchor": "T1059.001: PowerShell", "positive": "Adversaries abuse PowerShell command-line interfaces and scripting environments to execute arbitrary malicious code and perform system discovery."}
+{"anchor": "Mimikatz LSASS Dump", "positive": "A credential theft technique targeting the Local Security Authority Subsystem Service (lsass.exe) memory space to extract plaintext passwords and Kerberos tickets."}
+{"anchor": "T1021.002: SMB/Windows Admin Shares", "positive": "A lateral movement technique where adversaries leverage legitimate administrator credentials to access hidden shares like ADMIN$ and C$ over SMB."}
+{"anchor": "CVE-2023-38831", "positive": "A WinRAR processing flaw where interacting with a crafted archive triggers automatic execution of embedded scripts disguised as legitimate file formats."}
